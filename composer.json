@@ -1,0 +1,34 @@
+{
+  "name": "mrstroz/php-edi-x12",
+  "description": "PHP Library to parse X12 EDI files. Library on top of aonach/php-edi, rebuild later by INWAVE Team for internal use.",
+  "keywords": [
+    "library",
+    "X12",
+    "EDI",
+    "parse"
+  ],
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Aonach Dev Team",
+      "email": "dev@aonach.com"
+    },
+    {
+      "name": "Inwave Dev Team",
+      "email": "info@inwave.pl"
+    }
+  ],
+  "require": {
+    "php": "^7.3",
+    "monolog/monolog": "1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mrstroz\\": "src/"
+    }
+  }
+}
