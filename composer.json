@@ -1,6 +1,6 @@
 {
   "name": "mrstroz/php-edi-x12",
-  "description": "PHP Library to parse X12 EDI files. Library on top of aonach/php-edi, rebuild later by INWAVE Team for internal use.",
+  "description": "A framework for parsing and generating EDI X12 documents in PHP. Library built on top of aonach/php-edi and PopeFelix/php-edi, rebuild later by INWAVE Team",
   "keywords": [
     "library",
     "X12",
