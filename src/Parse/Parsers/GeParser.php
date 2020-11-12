@@ -12,7 +12,7 @@ class GeParser implements SegmentParserInterface
     /**
      * To indicate the end of a functional group and to provide control information
      */
-    const GE_00 = 'end_group';
+    const GE_00 = 'edi_qualifier';
 
     /**
      * Number of Transaction Sets Included - Total number of transaction sets included in the functional group or interchange (transmission) group terminated by the trailer containing this data element

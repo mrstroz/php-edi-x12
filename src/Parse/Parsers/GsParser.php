@@ -13,7 +13,7 @@ class GsParser implements SegmentParserInterface
     /**
      * GS represents functional group header. It marks the beginning of a functional group and is used to provide control information.
      */
-    const GS_00 = 'functional_group_header';
+    const GS_00 = 'edi_qualifier';
 
     /**
      * The code ‘PO’ indicates purchase order - What about the other ones? OMG!

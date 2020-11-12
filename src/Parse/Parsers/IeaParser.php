@@ -13,7 +13,7 @@ class IeaParser implements SegmentParserInterface
     /**
      * To define the end of an interchange of zero or more functional groups and interchange-related control segments
      */
-    const IEA_00 = 'end_interchange';
+    const IEA_00 = 'edi_qualifier';
 
     /**
      * Number of Included Functional Groups - A count of the number of functional groups included in an interchange

@@ -13,7 +13,7 @@ class IsaParser implements SegmentParserInterface
     /**
      * ISA represents interchange control header.
      */
-    const ISA_00 = 'interchange_header';
+    const ISA_00 = 'edi_qualifier';
 
     /**
      * Code 00 indicates that no authorization information present in I02.
