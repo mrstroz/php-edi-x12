@@ -2,58 +2,16 @@
 
 namespace Mrstroz\Edi\Segments;
 
+use Mrstroz\Edi\Segment;
 
 /**
  * Class MsgSegment
  * @package Mrstroz\Edi\Segments
  */
-class MsgSegment implements SegmentInterface
+class MsgSegment extends Segment
 {
-
-    /**
-     * Message Text
-     */
-    const MSG_00 = 'edi_qualifier';
-
-    /**
-     *  Free-form message text
-     */
-    const MSG_01 = 'text';
-
-
-    /**
-     * @param $segment
-     * @return array
-     */
-    public static function parse($segment)
-    {
-        $content = array();
-        array_walk_recursive($segment, 'self::setContentType');
-        foreach ($segment as $key => $item) {
-            if ($item) {
-                $content[key($item)] = $item[key($item)];
-            }
-        }
-
-        return $content;
-    }
-
-    /**
-     * Set the the key to a meaningfull value.
-     * @param $item
-     * @param $key
-     */
-    private static function setContentType(&$item, $key)
-    {
-        switch ($key) {
-            case 0:
-                $item = [self::MSG_00 => $item];
-                break;
-            case 1:
-                $item = [self::MSG_01 => $item];
-                break;
-            default:
-                break;
-        }
-    }
+    public $segmentMapping = [
+        0 => parent::EDI_QUALIFIER_KEY, //Message Text
+        1 => 'text', //Free-form message text
+    ];
 }

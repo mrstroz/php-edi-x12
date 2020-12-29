@@ -2,75 +2,30 @@
 
 namespace Mrstroz\Edi\Segments;
 
+use Mrstroz\Edi\Segment;
 
 /**
  * Class SacSegment
  * @package Mrstroz\Edi\Segments
  */
-class SacSegment implements SegmentInterface
+class SacSegment extends Segment
 {
-
-    /**
-     * Service, Promotion, Allowance, or Charge Information
-     */
-    const SAC_00 = 'edi_qualifier';
-
-    /**
-     * Allowance or Charge Indicator
-     */
-    const SAC_01 = 'indicator';
-
-    /**
-     * Service, Promotion, Allowance, or Charge Code
-     */
-    const SAC_02 = 'code';
-
-    /**
-     * Description
-     */
-    const SAC_15 = 'description';
-
-
-    /**
-     * @param $segment
-     * @return array
-     */
-    public static function parse($segment)
-    {
-        $content = array();
-        array_walk_recursive($segment, 'self::setContentType');
-        foreach ($segment as $key => $item) {
-            if ($item) {
-                $content[key($item)] = $item[key($item)];
-            }
-        }
-
-        return $content;
-    }
-
-    /**
-     * Set the the key to a meaningfull value.
-     * @param $item
-     * @param $key
-     */
-    private static function setContentType(&$item, $key)
-    {
-        switch ($key) {
-            case 0:
-                $item = [self::SAC_00 => $item];
-                break;
-            case 1:
-                $item = [self::SAC_01 => $item];
-                break;
-            case 2:
-                $item = [self::SAC_02 => $item];
-                break;
-            case 15:
-                $item = [self::SAC_15 => $item];
-                break;
-            default:
-//                $item = [$key => $item];
-                break;
-        }
-    }
+    public $segmentMapping = [
+        0 => parent::EDI_QUALIFIER_KEY, //Service, Promotion, Allowance, or Charge Information
+        1 => 'indicator', //Allowance or Charge Indicator
+        2 => 'code', //Service, Promotion, Allowance, or Charge Code,
+        3 => '',
+        4 => '',
+        5 => '',
+        6 => '',
+        7 => '',
+        8 => '',
+        9 => '',
+        10 => '',
+        11 => '',
+        12 => '',
+        13 => '',
+        14 => '',
+        15 => 'description', //Description
+    ];
 }

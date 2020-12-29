@@ -11,9 +11,38 @@ use Mrstroz\Edi\Document;
 class Edi
 {
 
-    const SEGMENT_TERMINATOR_POSITION = 105;
-    const SUBELEMENT_SEPARATOR_POSITION = 104;
-    const ELEMENT_SEPARATOR_POSITION = 3;
+    public const SEGMENT_TERMINATOR_POSITION = 105;
+    public const SUBELEMENT_SEPARATOR_POSITION = 104;
+    public const ELEMENT_SEPARATOR_POSITION = 3;
+
+    public static $segmentMapping = [
+        'ISA' => 'Mrstroz\Edi\Segments\IsaSegment',
+        'GS' => 'Mrstroz\Edi\Segments\GsSegment',
+        'ST' => 'Mrstroz\Edi\Segments\StSegment',
+        'BEG' => 'Mrstroz\Edi\Segments\BegSegment',
+        'REF' => 'Mrstroz\Edi\Segments\RefSegment',
+        'PER' => 'Mrstroz\Edi\Segments\PerSegment',
+        'FOB' => 'Mrstroz\Edi\Segments\FobSegment',
+        'SAC' => 'Mrstroz\Edi\Segments\SacSegment',
+        'DTM' => 'Mrstroz\Edi\Segments\DtmSegment',
+        'TD1' => 'Mrstroz\Edi\Segments\Td1Segment',
+        'TD5' => 'Mrstroz\Edi\Segments\Td5Segment',
+        'TD4' => 'Mrstroz\Edi\Segments\Td4Segment',
+        'N9' => 'Mrstroz\Edi\Segments\N9Segment',
+        'MSG' => 'Mrstroz\Edi\Segments\MsgSegment',
+        'N1' => 'Mrstroz\Edi\Segments\N1Segment',
+        'N2' => 'Mrstroz\Edi\Segments\N2Segment',
+        'N3' => 'Mrstroz\Edi\Segments\N3Segment',
+        'N4' => 'Mrstroz\Edi\Segments\N4Segment',
+        'PO1' => 'Mrstroz\Edi\Segments\Po1Segment',
+        'PID' => 'Mrstroz\Edi\Segments\PidSegment',
+        'TC2' => 'Mrstroz\Edi\Segments\Tc2Segment',
+        'CTT' => 'Mrstroz\Edi\Segments\CttSegment',
+        'ATM' => 'Mrstroz\Edi\Segments\AmtSegment',
+        'SE' => 'Mrstroz\Edi\Segments\SeSegment',
+        'GE' => 'Mrstroz\Edi\Segments\GeSegment',
+        'IEA' => 'Mrstroz\Edi\Segments\IeaSegment',
+    ];
 
     /**
      * Parse an EDI document. Data will be returned as an array of instances of
