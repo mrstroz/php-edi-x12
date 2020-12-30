@@ -38,7 +38,7 @@ class Edi
         'PID' => 'Mrstroz\Edi\Segments\PidSegment',
         'TC2' => 'Mrstroz\Edi\Segments\Tc2Segment',
         'CTT' => 'Mrstroz\Edi\Segments\CttSegment',
-        'ATM' => 'Mrstroz\Edi\Segments\AmtSegment',
+        'AMT' => 'Mrstroz\Edi\Segments\AmtSegment',
         'SE' => 'Mrstroz\Edi\Segments\SeSegment',
         'GE' => 'Mrstroz\Edi\Segments\GeSegment',
         'IEA' => 'Mrstroz\Edi\Segments\IeaSegment',
