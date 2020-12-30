@@ -14,5 +14,7 @@ class DtmSegment extends Segment
         0 => parent::EDI_QUALIFIER_KEY, //To specify pertinent dates and times
         1 => 'date_qualifier', //Date/Time Qualifier
         2 => 'date', //Date - CCYYMMDD
+        3 => 'time',
+        4 => 'time_code',
     ];
 }
